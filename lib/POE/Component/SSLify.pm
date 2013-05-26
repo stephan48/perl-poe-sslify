@@ -186,7 +186,7 @@ sub Client_SSLify {
 
 	# Now, we create the new socket and bind it to our subclass of Net::SSLeay::Handle
 	my $newsock = gensym();
-	tie( *$newsock, 'POE::Component::SSLify::ClientHandle', $socket, $version, $options, $custom_ctx, $callback ) or die "Unable to tie to our subclass: $!";
+	tie( *$newsock, 'POE::Component::SSLify::ClientHandle', $socket, $version, $options, ( $custom_ctx || $ctx ), $callback ) or die "Unable to tie to our subclass: $!";
 
 	# argh, store the newsock in the tied class to use for callback
 	if ( defined $callback ) {

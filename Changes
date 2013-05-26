@@ -1,6 +1,7 @@
 Revision history for Perl extension POE::Component::SSLify.
 
 {{$NEXT}}
+	Adapted Client_SSLify to use the CTX Configured by SSLify_Options
 
 1.008
 	Released: 2011-05-04 21:55:27 UTC
